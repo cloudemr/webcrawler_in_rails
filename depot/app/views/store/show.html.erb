@@ -1,0 +1,19 @@
+<table border = 2 >
+<% @json_hash.each do |key,value| %>
+
+ <% if key.eql?("pages") %>
+       <% value.each do |inner_key_1,inner_value_1|%>
+             <table border=1 bgcolor=red>
+		<% inner_value_1.each do |inner_key_2,inner_value_2| %> 
+		  <tr><td bgcolor=yellow><%= inner_key_2 %></td><td bgcolor=pink><%= inner_value_2 %></td></tr>
+                <% end %>
+            </table>
+          </td>
+       <% end %> 
+       </tr>
+ <% else %>
+	<tr><td bgcolor=yellow><%= key %></td><td bgcolor=pink><%= value %></td></tr>
+ <% end %>
+
+<% end %>
+</table>
